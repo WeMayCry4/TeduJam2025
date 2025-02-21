@@ -35,6 +35,11 @@ public class BossHealth : MonoBehaviour
         {
             //chaseState
         }
+
+        else if(health > 80 || health < 90)
+        {
+            //stayState
+        }
     }
 
 }
