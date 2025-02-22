@@ -16,15 +16,11 @@ public class ThrownObject : MonoBehaviour
         {
             hasHitSomething = true;
             DealDamageToBoss(target);
-            DamageSelf(damageAmount); // self damage
-            Destroy(gameObject, destroyDelay);  // Destroy game object after delay.
         }
         else if (target.GetComponent<HealthSystem>() != null && !target.CompareTag("Interactable"))
         {
             hasHitSomething = true;
             DealDamageToOther(target);
-            DamageSelf(damageAmount);
-            Destroy(gameObject, destroyDelay);
         }
     }
 
@@ -44,16 +40,5 @@ public class ThrownObject : MonoBehaviour
         {
             boss.TakeDamage(damageAmount);  // Call a method on the BossController
         }
-    }
-
-    private void DamageSelf(int damage)
-    {
-        HealthSystem selfHealth = GetComponent<HealthSystem>();
-        if (selfHealth != null)
-        {
-            selfHealth.TakeDamage(damage);
-        }
-
-        Destroy(gameObject); // Remove the script after impact
     }
 }

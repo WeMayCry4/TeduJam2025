@@ -20,31 +20,4 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
-
-    // Example 2: Raycast-based attack (e.g., shooting)
-    public void PerformRaycastAttack()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 100f)) // Adjust range as needed
-        {
-            if (hit.collider.gameObject.CompareTag(BossTag))
-            {
-                BossStateMachine boss = hit.collider.GetComponent<BossStateMachine>();
-
-                if (boss != null)
-                {
-                    boss.TakeDamage(AttackDamage);
-                }
-            }
-        }
-    }
-
-    //Example 3: Using Input and Button
-    void Update()
-    {
-        if (Input.GetButtonDown("Fire1")) // Replace "Fire1" with your desired input button
-        {
-            PerformRaycastAttack();  // Call the raycast attack function
-        }
-    }
 }
