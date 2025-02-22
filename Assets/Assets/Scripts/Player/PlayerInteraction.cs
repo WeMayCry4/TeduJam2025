@@ -23,15 +23,19 @@ public class PlayerInteraction : MonoBehaviour
             Interaction();
         }
     }
-
-    void CheckInteractions()
+    
+void CheckInteractions()
     {
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         if (Physics.Raycast(ray, out hit, playerReach))
         {
-            if (hit.collider.tag == "Interactable" && hit.collider.GetComponent<Interactable>().interactable)
+            //Get the component on the hit collider
+            Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+            //Make sure the component exists before trying to use it.
+            if (hit.collider.tag == "Interactable" && interactable != null && interactable.interactable)
             {
-                Interactable newInteractable = hit.collider.GetComponent<Interactable>();
+                Interactable newInteractable = interactable;
                 if (currentInteractable != null && newInteractable != currentInteractable) currentInteractable.DisableOutline();
                 SetCurrentInteractable(newInteractable);
             }

@@ -1,55 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-public class ShieldState : MonoBehaviour
+public class ShieldState : IEnemyState
 {
-    public Transform player; // Oyuncu
-    public Transform escapePoint; // Kaçış noktası
-    public GameObject shield; // Kalkan objesi
-    public float health = 100f;
-    public float escapeThreshold = 30f; // Kaçmaya başlayacağı can seviyesi
+    private BossStateMachine boss;
     private NavMeshAgent agent;
-    private bool isEscaping = false;
 
-    void Start()
+    public ShieldState(BossStateMachine boss, NavMeshAgent agent)
     {
-        agent = GetComponent<NavMeshAgent>();
-        shield.SetActive(false); // Başlangıçta kalkan kapalı olsun
+        this.boss = boss;
+        this.agent = agent;
     }
 
-    void Update()
+    public void Enter()
     {
-        if (isEscaping)
+        Debug.Log("Entering Shield State");
+        agent.SetDestination(boss.ShieldPosition.position);
+    }
+
+    public void Update()
+    {
+        float distance = Vector3.Distance(boss.transform.position, boss.ShieldPosition.position);
+        if (distance < 1f) // Once boss reaches the shield zone
         {
-            agent.SetDestination(escapePoint.position);
-            if (Vector3.Distance(transform.position, escapePoint.position) < 1f)
-            {
-                ActivateShield();
-            }
-        }
-        else if (player != null && health > escapeThreshold)
-        {
-            agent.SetDestination(player.position);
+            boss.ActivateShield();
         }
     }
 
-    public void TakeDamage(float damage)
+    public void Exit()
     {
-        health -= damage;
-        if (health <= escapeThreshold && !isEscaping)
-        {
-            isEscaping = true;
-        }
-    }
-
-    void ActivateShield()
-    {
-        shield.SetActive(true);
-        agent.isStopped = true; // Düşman hareket etmeyi bıraksın
-        // Burada düşmanın saldırı yapmasını da durdurabilirsin
+        Debug.Log("Exiting Shield State");
     }
 }
-
