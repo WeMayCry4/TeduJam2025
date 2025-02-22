@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int health = 60;
+    public int health = 100;
 
     public void TakeDamage(int damage)
     {
