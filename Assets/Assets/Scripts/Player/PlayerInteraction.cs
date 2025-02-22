@@ -6,6 +6,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float playerReach = 3f;
+    [SerializeField] private KeyCode interactionKey = KeyCode.E; // Add interaction Key
 
     RaycastHit hit;
     Interactable currentInteractable;
@@ -15,17 +16,23 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         CheckInteractions();
+
+        // Handle Input for Interaction
+        if (Input.GetKeyDown(interactionKey) && CheckIsThereAInteractable())
+        {
+            Interaction();
+        }
     }
 
     void CheckInteractions()
     {
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
-        if(Physics.Raycast(ray, out hit, playerReach))
+        if (Physics.Raycast(ray, out hit, playerReach))
         {
-            if(hit.collider.tag == "Interactable" && hit.collider.GetComponent<Interactable>().interactable)
+            if (hit.collider.tag == "Interactable" && hit.collider.GetComponent<Interactable>().interactable)
             {
                 Interactable newInteractable = hit.collider.GetComponent<Interactable>();
-                if(currentInteractable != null && newInteractable != currentInteractable) currentInteractable.DisableOutline();
+                if (currentInteractable != null && newInteractable != currentInteractable) currentInteractable.DisableOutline();
                 SetCurrentInteractable(newInteractable);
             }
             else DisableCurrentInteractable();
@@ -40,12 +47,13 @@ public class PlayerInteraction : MonoBehaviour
         currentInteractable = newInteractable;
         currentInteractable.EnableOutline();
 
+        // Assuming UIManager.Instance.EnableInteractionTest takes a string.  If it needs different data, adjust accordingly.
         UIManager.Instance.EnableInteractionTest(currentInteractable.GetUIMessage());
     }
 
     void DisableCurrentInteractable()
     {
-        if(currentInteractable != null)
+        if (currentInteractable != null)
         {
             currentInteractable.DisableOutline();
             currentInteractable = null;
@@ -57,13 +65,13 @@ public class PlayerInteraction : MonoBehaviour
 
     public bool CheckIsThereAInteractable()
     {
-        if(currentInteractable != null) return true;
+        if (currentInteractable != null) return true;
         else return false;
     }
 
     public void Interaction()
     {
-        if(lockInteraction) return;
+        if (lockInteraction) return;
         currentInteractable.Interact();
     }
 
