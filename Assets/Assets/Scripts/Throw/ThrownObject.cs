@@ -11,12 +11,12 @@ public class ThrownObject : MonoBehaviour
 
         GameObject target = collision.gameObject;  // The object we collided with
 
-        if (target.CompareTag("Boss")) // Check for the "Boss" tag.
-        {
-            hasHitSomething = true;
-            DealDamageToBoss(target);
-        }
-        else if (target.GetComponent<HealthSystem>() != null && !target.CompareTag("Interactable"))
+        // if (target.CompareTag("Boss")) // Check for the "Boss" tag.
+        // {
+        //     hasHitSomething = true;
+        //     DealDamageToBoss(target);
+        // }
+        if (target.GetComponent<HealthSystem>() != null && !target.CompareTag("Interactable"))
         {
             hasHitSomething = true;
             DealDamageToOther(target);
