@@ -298,7 +298,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   playerCamera: {fileID: 3737887242844459816}
   moveSpeed: 8
-  mouseSensitivity: 70
+  mouseSensitivity: 100
   jumpHeight: 1
   rotationLerp: 0.3
   mouseX: 0
