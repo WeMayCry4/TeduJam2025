@@ -8,7 +8,6 @@ public class ThrownObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (hasHitSomething) return; // Prevent multiple damage events
 
         GameObject target = collision.gameObject;  // The object we collided with
 

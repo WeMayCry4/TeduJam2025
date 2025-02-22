@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections.Generic;
+using System.Linq;
 
 public class BossStateMachine : MonoBehaviour
 {
@@ -7,12 +9,18 @@ public class BossStateMachine : MonoBehaviour
     public Transform ShieldPosition; // Where the boss will go when shielding
     public GameObject ShieldObject; // The shield that appears
     public float Health = 100f;
+    public GameObject ShieldSpots; // Parent object of the Shield Spots
 
     private IEnemyState currentState;
     private NavMeshAgent agent;
 
     public IEnemyState chaseState;
     public IEnemyState shieldState;
+
+    private bool isShielded = false; // Track if the shield is active
+    private float shieldHealthThreshold1 = 70f;
+    private float shieldHealthThreshold2 = 30f;
+    private List<GameObject> shieldSpotList = new List<GameObject>();
 
     void Start()
     {
@@ -24,6 +32,12 @@ public class BossStateMachine : MonoBehaviour
 
         // Start in Chase State
         ChangeState(chaseState);
+
+        // Populate the list of shield spots
+        foreach (Transform child in ShieldSpots.transform)
+        {
+            shieldSpotList.Add(child.gameObject);
+        }
     }
 
     void Update()
@@ -32,6 +46,8 @@ public class BossStateMachine : MonoBehaviour
         {
             currentState.Update();
         }
+
+        CheckHealthAndShield();
     }
 
     public void ChangeState(IEnemyState newState)
@@ -55,6 +71,47 @@ public class BossStateMachine : MonoBehaviour
     {
         ShieldObject.SetActive(true);
         agent.isStopped = true; // Stop movement
+        isShielded = true;
         Debug.Log("Shield Activated!");
+    }
+
+    private void DeactivateShield()
+    {
+        ShieldObject.SetActive(false);
+        agent.isStopped = false; // Resume movement
+        isShielded = false;
+        Debug.Log("Shield Deactivated!");
+    }
+
+    private void CheckHealthAndShield()
+    {
+        int count = 0;
+        if(count < 1)
+        {//Below 70HP, and below 30hp trigger shield state only if not already shielded
+        if (!isShielded && (Health < shieldHealthThreshold1 || Health < shieldHealthThreshold2))
+        {
+            ChangeState(shieldState);
+        }
+        }
+
+        //Check is Shield Active
+        if (isShielded)
+        {
+            //Check if all shield spots are destoryed, linq makes it easy
+            bool allShieldsDown = shieldSpotList.All(spot => spot == null);
+
+            //ShieldsDown, then change state to Chase, and deactivate Shield
+            if (allShieldsDown)
+            {
+                DeactivateShield();
+                ChangeState(chaseState);
+            }
+        }
+    }
+
+    //Call this function when spot is destroyed
+    public void RemoveShieldSpot(GameObject spot)
+    {
+        shieldSpotList.Remove(spot);
     }
 }
