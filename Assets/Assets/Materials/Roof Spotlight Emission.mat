@@ -12,7 +12,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHAPREMULTIPLY_ON
   - _EMISSION
   m_InvalidKeywords:
   - TCP2_REFLECTIONS_FRESNEL
@@ -22,9 +21,8 @@ Material:
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -114,20 +112,20 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DirectIntensityOutline: 1
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EmissionChannel: 4
     - _FlatShading: 0
     - _FresnelMax: 1.5
     - _FresnelMin: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.507
     - _GlossyReflections: 1
     - _IndirectIntensity: 1
     - _IndirectIntensityOutline: 0
     - _MatCapMaskChannel: 0
     - _MatCapType: 0
     - _Metallic: 0
-    - _Mode: 3
+    - _Mode: 0
     - _NormalsSource: 0
     - _NormalsUVType: 0
     - _ObjectDithering: 1
@@ -180,12 +178,12 @@ Material:
     - _UseRimLightMask: 1
     - _UseShadowTexture: 0
     - _UseSpecular: 0
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 0.9652054, b: 0.5330188, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CubemapColor: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 0.8078616, b: 0.5707547, a: 1}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
