@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2098345479112116970}
   - component: {fileID: 7751559488610648938}
   - component: {fileID: 7356593564995164652}
-  - component: {fileID: 1567551426869085144}
   - component: {fileID: 2116386461983275753}
+  - component: {fileID: 3759988828253949738}
+  - component: {fileID: 7081052808566918178}
   m_Layer: 0
   m_Name: Chair (1)
   m_TagString: Interactable
@@ -108,20 +109,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6264831526926562434, guid: 1aaa91a33a26bf34cb2fe6aa45627b3a, type: 3}
---- !u!114 &1567551426869085144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785069311846114397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4763681fce03e4eb835188a1b8e251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 20
-  destroyDelay: 0.1
 --- !u!54 &2116386461983275753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,6 +136,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3759988828253949738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785069311846114397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 7081052808566918178}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+--- !u!114 &7081052808566918178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785069311846114397}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2667353847767414504
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,8 +182,9 @@ GameObject:
   - component: {fileID: 276593117916599453}
   - component: {fileID: 1566397878218098269}
   - component: {fileID: 162699446236377825}
-  - component: {fileID: 2782723463513852060}
   - component: {fileID: 5382157503102397926}
+  - component: {fileID: 8810169829495411327}
+  - component: {fileID: 5567078869273917585}
   m_Layer: 0
   m_Name: Chair (2)
   m_TagString: Interactable
@@ -257,20 +279,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6264831526926562434, guid: 1aaa91a33a26bf34cb2fe6aa45627b3a, type: 3}
---- !u!114 &2782723463513852060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2667353847767414504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4763681fce03e4eb835188a1b8e251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 20
-  destroyDelay: 0.1
 --- !u!54 &5382157503102397926
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -298,6 +306,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8810169829495411327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2667353847767414504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 5567078869273917585}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+--- !u!114 &5567078869273917585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2667353847767414504}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4100533335701275513
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,8 +352,9 @@ GameObject:
   - component: {fileID: 6024657683687499711}
   - component: {fileID: 5812477179672000399}
   - component: {fileID: 8894452369332721923}
-  - component: {fileID: 270849574107839843}
   - component: {fileID: 6627589225939855085}
+  - component: {fileID: 6688973387788791732}
+  - component: {fileID: 2487883148397542436}
   m_Layer: 0
   m_Name: Chair (3)
   m_TagString: Interactable
@@ -406,20 +449,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6264831526926562434, guid: 1aaa91a33a26bf34cb2fe6aa45627b3a, type: 3}
---- !u!114 &270849574107839843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4100533335701275513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4763681fce03e4eb835188a1b8e251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 20
-  destroyDelay: 0.1
 --- !u!54 &6627589225939855085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -447,6 +476,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6688973387788791732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100533335701275513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 2487883148397542436}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+--- !u!114 &2487883148397542436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100533335701275513}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4775470006489321588
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,8 +522,9 @@ GameObject:
   - component: {fileID: 77254573138973049}
   - component: {fileID: 2952019952929888079}
   - component: {fileID: 3059184766003906232}
-  - component: {fileID: 7493315894769822161}
   - component: {fileID: 449413798487423673}
+  - component: {fileID: 4965142866492022951}
+  - component: {fileID: 8972131337487870551}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Interactable
@@ -555,20 +619,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6264831526926562434, guid: 1aaa91a33a26bf34cb2fe6aa45627b3a, type: 3}
---- !u!114 &7493315894769822161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4775470006489321588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4763681fce03e4eb835188a1b8e251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 20
-  destroyDelay: 0.1
 --- !u!54 &449413798487423673
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -596,6 +646,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4965142866492022951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775470006489321588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 8972131337487870551}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+--- !u!114 &8972131337487870551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775470006489321588}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4957076934453001569
 GameObject:
   m_ObjectHideFlags: 0

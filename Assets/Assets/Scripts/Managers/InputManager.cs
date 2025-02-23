@@ -31,6 +31,11 @@ public class InputManager : MonoBehaviour
         // LMB
         if(Input.GetButtonDown("Fire1"))
         {
+            ObjectThrow.Instance.Throw();
+        }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
             if(interaction.CheckIsThereAInteractable()) interaction.Interaction();
         }
     }
