@@ -21,9 +21,11 @@ public class PlayerHealth : MonoBehaviour
     public Image overlay;
     public float duration;
     public float fadeSpeed;
-
+    public float damageTickRate = 1f;
+    public float trapDamagePerTick = 2f;
     private float durationTimer;
     private bool isGameOver = false; // Prevent multiple triggers
+    private bool isInTrap = false;
 
     void Start()
     {
@@ -89,6 +91,31 @@ public class PlayerHealth : MonoBehaviour
         lerpTimer = 0f;
         durationTimer = 0;
         overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 1);
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if(collision.gameObject.CompareTag("shieldTrap"))
+        {
+            isInTrap = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if(collision.gameObject.CompareTag("shieldTrap"))
+        {
+            isInTrap = false;
+        }
+    }
+
+        private IEnumerator TakeDamageOverTime()
+    {
+        while (isInTrap) // Keep damaging as long as we're in the trap
+        {
+            TakeDamage(trapDamagePerTick);
+            yield return new WaitForSeconds(damageTickRate); // Wait for the specified tick rate
+        }
     }
 
     public void RestoreHealth(float healAmount)
