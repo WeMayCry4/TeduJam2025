@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "TeduJ.sln"
+    "dotnet.defaultSolution": "TeduJam2025.sln"
 }

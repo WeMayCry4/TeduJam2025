@@ -95,6 +95,7 @@ public class BossStateMachine : Singleton<BossStateMachine>
     {
         Health -= damage;
         Debug.Log("Boss Health: " + Health);
+        Stun(2);
     }
 
     public void ActivateShield()
