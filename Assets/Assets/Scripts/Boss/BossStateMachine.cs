@@ -22,6 +22,18 @@ public class BossStateMachine : Singleton<BossStateMachine>
     private float shieldHealthThreshold2 = 30f;
     private List<GameObject> shieldSpotList = new List<GameObject>();
 
+    private bool isStunned = false;
+    private float stunTimer = 0f;
+
+    public void Stun(float duration)
+    {
+        isStunned = true;
+        stunTimer = duration;
+        agent.isStopped = true;
+        
+    }
+
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -42,6 +54,19 @@ public class BossStateMachine : Singleton<BossStateMachine>
 
     void Update()
     {
+
+        if (isStunned)
+        {
+            stunTimer -= Time.deltaTime;
+            if (stunTimer <= 0f)
+            {
+                isStunned = false;
+                agent.isStopped = false;
+            }
+
+            return;
+        }
+        
         if (currentState != null)
         {
             currentState.Update();

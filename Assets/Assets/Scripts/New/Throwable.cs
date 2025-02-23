@@ -14,6 +14,7 @@ public class Throwable : MonoBehaviour, Interactable
     [HideInInspector] public bool interactable {get => canBeInteractive;}
     [HideInInspector] public bool holdable {get => canBeHold;}
 
+    public bool isFlashbang1 = false;
 
     public void EnableOutline()
     {
@@ -52,6 +53,11 @@ public class Throwable : MonoBehaviour, Interactable
 
     public void Throwed()
     {
+        if (isFlashbang1){
+            gameObject.layer = 0;
+        }
+        else 
+
         DOVirtual.DelayedCall(2f, ()=>
         {
             gameObject.layer = 0;
