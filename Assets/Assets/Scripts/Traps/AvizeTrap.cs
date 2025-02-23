@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class AvizeTrap : MonoBehaviour
 {
-     [SerializeField] private float damage;
-    [SerializeField] private string targetTag = "Boss"; // Tag of the object to damage.
-    [SerializeField] private string activationTag = "Interactable"; // Tag of the object that triggers the trap
-    [SerializeField] private GameObject explosionEffect; // Optional: Visual effect to play on activation
+    [SerializeField] private string activationTag = "Interactable";
+    [SerializeField] private GameObject explosionEffect;
 
     private bool _isTrapActive = false;  //Only activates the trap one time.
     private Collider _trapCollider;
@@ -37,37 +35,39 @@ public class AvizeTrap : MonoBehaviour
     private void ActivateTrap()
     {
         Debug.Log("One-Shot Trap Activated!");
-        _isTrapActive = true;
-
-        // Disable the trap's collider to prevent multiple activations or damage.
-        _trapCollider.enabled = false;
-
-        // Apply Damage to all objects with targetTag inside trigger area.
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, _trapCollider.bounds.extents.magnitude);
-        foreach (Collider hitCollider in hitColliders)
-        {
-            if (hitCollider.CompareTag(targetTag))
-            {
-                var bossHealth = hitCollider.GetComponent<BossHealth>();
-                if (bossHealth != null)
-                {
-                    bossHealth.EnemyTakeDamage(damage);
-                    Debug.Log("Damaged boss!");
-                }
-                else
-                {
-                    Debug.LogWarning("OneShotCollisionTrap: Object with tag 'Boss' has no BossHealth component.");
-                }
-            }
-        }
-
-        // Optional: Instantiate an explosion effect.
-        if (explosionEffect != null)
-        {
-            Instantiate(explosionEffect, transform.position, transform.rotation);
-        }
-
-        // Destroy the trap object.
+        explosionEffect.gameObject.SetActive(true);
+        explosionEffect.transform.SetParent(null);
         Destroy(gameObject);
+        // _isTrapActive = true;
+
+        // // Disable the trap's collider to prevent multiple activations or damage.
+        // _trapCollider.enabled = false;
+
+        // // Apply Damage to all objects with targetTag inside trigger area.
+        // Collider[] hitColliders = Physics.OverlapSphere(transform.position, _trapCollider.bounds.extents.magnitude);
+        // foreach (Collider hitCollider in hitColliders)
+        // {
+        //     if (hitCollider.CompareTag(targetTag))
+        //     {
+        //         var bossHealth = hitCollider.GetComponent<BossHealth>();
+        //         if (bossHealth != null)
+        //         {
+        //             bossHealth.EnemyTakeDamage(damage);
+        //             Debug.Log("Damaged boss!");
+        //         }
+        //         else
+        //         {
+        //             Debug.LogWarning("OneShotCollisionTrap: Object with tag 'Boss' has no BossHealth component.");
+        //         }
+        //     }
+        // }
+
+        // // Optional: Instantiate an explosion effect.
+        // if (explosionEffect != null)
+        // {
+        //     Instantiate(explosionEffect, transform.position, transform.rotation);
+        // }
+
+        // // Destroy the trap object.
     }
 }
