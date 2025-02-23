@@ -12,7 +12,7 @@ public class BossStateMachine : Singleton<BossStateMachine>
     public GameObject ShieldSpots; // Parent object of the Shield Spots
 
     private IEnemyState currentState;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     public IEnemyState chaseState;
     public IEnemyState shieldState;
