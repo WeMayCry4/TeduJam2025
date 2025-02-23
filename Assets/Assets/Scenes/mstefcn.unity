@@ -2861,6 +2861,8 @@ GameObject:
   - component: {fileID: 221111866}
   - component: {fileID: 221111865}
   - component: {fileID: 221111864}
+  - component: {fileID: 221111868}
+  - component: {fileID: 221111867}
   m_Layer: 0
   m_Name: Laptop 1 (1)
   m_TagString: Interactable
@@ -2996,6 +2998,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6741284805286288616, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &221111867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221111860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &221111868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221111860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 221111867}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &222337765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3741,6 +3778,8 @@ GameObject:
   - component: {fileID: 317874856}
   - component: {fileID: 317874855}
   - component: {fileID: 317874854}
+  - component: {fileID: 317874858}
+  - component: {fileID: 317874857}
   m_Layer: 0
   m_Name: Laptop 1 (10)
   m_TagString: Interactable
@@ -3876,6 +3915,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5733197079889586796, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &317874857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317874850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &317874858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317874850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 317874857}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1001 &324376710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4558,6 +4632,8 @@ GameObject:
   - component: {fileID: 446859921}
   - component: {fileID: 446859920}
   - component: {fileID: 446859919}
+  - component: {fileID: 446859923}
+  - component: {fileID: 446859922}
   m_Layer: 0
   m_Name: Laptop 1 (5)
   m_TagString: Interactable
@@ -4693,6 +4769,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6741284805286288616, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &446859922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446859915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &446859923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446859915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 446859922}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &448815967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5178,7 +5289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &481409070
 Transform:
   m_ObjectHideFlags: 0
@@ -5209,6 +5320,8 @@ GameObject:
   - component: {fileID: 490859418}
   - component: {fileID: 490859417}
   - component: {fileID: 490859416}
+  - component: {fileID: 490859420}
+  - component: {fileID: 490859419}
   m_Layer: 0
   m_Name: Laptop 1 (9)
   m_TagString: Interactable
@@ -5344,6 +5457,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5733197079889586796, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &490859419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490859412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &490859420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490859412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 490859419}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &499597860
 GameObject:
   m_ObjectHideFlags: 0
@@ -5912,6 +6060,8 @@ GameObject:
   - component: {fileID: 618326627}
   - component: {fileID: 618326626}
   - component: {fileID: 618326625}
+  - component: {fileID: 618326629}
+  - component: {fileID: 618326628}
   m_Layer: 0
   m_Name: Laptop 1 (4)
   m_TagString: Interactable
@@ -6047,6 +6197,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5733197079889586796, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &618326628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618326621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &618326629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618326621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 618326628}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &628487748
 GameObject:
   m_ObjectHideFlags: 0
@@ -6668,6 +6853,8 @@ GameObject:
   - component: {fileID: 705179139}
   - component: {fileID: 705179138}
   - component: {fileID: 705179137}
+  - component: {fileID: 705179141}
+  - component: {fileID: 705179140}
   m_Layer: 0
   m_Name: Laptop 1 (11)
   m_TagString: Interactable
@@ -6803,6 +6990,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6741284805286288616, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &705179140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705179133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &705179141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705179133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 705179140}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1001 &717382067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7160,7 +7382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &749214813
 Transform:
   m_ObjectHideFlags: 0
@@ -7957,6 +8179,8 @@ GameObject:
   - component: {fileID: 871241364}
   - component: {fileID: 871241363}
   - component: {fileID: 871241362}
+  - component: {fileID: 871241366}
+  - component: {fileID: 871241365}
   m_Layer: 0
   m_Name: Laptop 1 (6)
   m_TagString: Interactable
@@ -8092,6 +8316,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4340246787525626463, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &871241365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871241358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &871241366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871241358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 871241365}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &871588314
 GameObject:
   m_ObjectHideFlags: 0
@@ -8443,6 +8702,8 @@ GameObject:
   - component: {fileID: 915116539}
   - component: {fileID: 915116538}
   - component: {fileID: 915116537}
+  - component: {fileID: 915116541}
+  - component: {fileID: 915116540}
   m_Layer: 0
   m_Name: Laptop 1 (7)
   m_TagString: Interactable
@@ -8578,6 +8839,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6741284805286288616, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &915116540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915116533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &915116541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915116533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 915116540}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &920026326
 GameObject:
   m_ObjectHideFlags: 0
@@ -8975,6 +9271,8 @@ GameObject:
   - component: {fileID: 969330533}
   - component: {fileID: 969330532}
   - component: {fileID: 969330531}
+  - component: {fileID: 969330535}
+  - component: {fileID: 969330534}
   m_Layer: 0
   m_Name: Laptop 1 (15)
   m_TagString: Interactable
@@ -9110,6 +9408,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6741284805286288616, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &969330534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969330527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &969330535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969330527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 969330534}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &973289805
 GameObject:
   m_ObjectHideFlags: 0
@@ -11601,6 +11934,8 @@ GameObject:
   - component: {fileID: 1185877309}
   - component: {fileID: 1185877308}
   - component: {fileID: 1185877307}
+  - component: {fileID: 1185877311}
+  - component: {fileID: 1185877310}
   m_Layer: 0
   m_Name: Laptop 1 (8)
   m_TagString: Interactable
@@ -11736,6 +12071,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6741284805286288616, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &1185877310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185877303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1185877311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185877303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 1185877310}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &1188055397
 GameObject:
   m_ObjectHideFlags: 0
@@ -13492,6 +13862,8 @@ GameObject:
   - component: {fileID: 1320473360}
   - component: {fileID: 1320473359}
   - component: {fileID: 1320473358}
+  - component: {fileID: 1320473362}
+  - component: {fileID: 1320473361}
   m_Layer: 0
   m_Name: Laptop 1 (2)
   m_TagString: Interactable
@@ -13627,6 +13999,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5733197079889586796, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &1320473361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320473354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1320473362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320473354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 1320473361}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &1325353450
 GameObject:
   m_ObjectHideFlags: 0
@@ -13807,6 +14214,8 @@ GameObject:
   - component: {fileID: 1334138764}
   - component: {fileID: 1334138763}
   - component: {fileID: 1334138762}
+  - component: {fileID: 1334138766}
+  - component: {fileID: 1334138765}
   m_Layer: 0
   m_Name: Laptop 1 (14)
   m_TagString: Interactable
@@ -13942,6 +14351,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6741284805286288616, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &1334138765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334138758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1334138766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334138758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 1334138765}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &1346933662
 GameObject:
   m_ObjectHideFlags: 0
@@ -16073,6 +16517,8 @@ GameObject:
   - component: {fileID: 1675188125}
   - component: {fileID: 1675188124}
   - component: {fileID: 1675188123}
+  - component: {fileID: 1675188127}
+  - component: {fileID: 1675188126}
   m_Layer: 0
   m_Name: Laptop 1 (3)
   m_TagString: Interactable
@@ -16208,6 +16654,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2277378670729026043, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &1675188126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675188119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1675188127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675188119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 1675188126}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &1681409389
 GameObject:
   m_ObjectHideFlags: 0
@@ -17795,6 +18276,8 @@ GameObject:
   - component: {fileID: 1984776714}
   - component: {fileID: 1984776713}
   - component: {fileID: 1984776712}
+  - component: {fileID: 1984776716}
+  - component: {fileID: 1984776715}
   m_Layer: 0
   m_Name: Laptop 1 (13)
   m_TagString: Interactable
@@ -17930,6 +18413,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4340246787525626463, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &1984776715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984776708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1984776716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984776708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 1984776715}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &2004428367
 GameObject:
   m_ObjectHideFlags: 0
@@ -18050,6 +18568,8 @@ GameObject:
   - component: {fileID: 2007904956}
   - component: {fileID: 2007904955}
   - component: {fileID: 2007904954}
+  - component: {fileID: 2007904958}
+  - component: {fileID: 2007904957}
   m_Layer: 0
   m_Name: Laptop 1 (12)
   m_TagString: Interactable
@@ -18065,9 +18585,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007904950}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.20178069, z: -0, w: -0.97943074}
-  m_LocalPosition: {x: -29.92, y: 1.432, z: -5.03}
-  m_LocalScale: {x: 0.6999999, y: 0.7, z: 0.6999999}
+  m_LocalRotation: {x: -0, y: -0.20178074, z: -0, w: -0.9794308}
+  m_LocalPosition: {x: -29.92, y: 1.432, z: -5.0299993}
+  m_LocalScale: {x: 0.70000005, y: 0.7, z: 0.70000005}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1949186508}
@@ -18185,6 +18705,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4340246787525626463, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &2007904957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007904950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &2007904958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007904950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 2007904957}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!1 &2018703271
 GameObject:
   m_ObjectHideFlags: 0
@@ -19708,6 +20263,8 @@ GameObject:
   - component: {fileID: 4198073448811555111}
   - component: {fileID: 4198073448811555110}
   - component: {fileID: 4198073448811555109}
+  - component: {fileID: 4198073448811555113}
+  - component: {fileID: 4198073448811555112}
   m_Layer: 0
   m_Name: Laptop 1
   m_TagString: Interactable
@@ -19979,6 +20536,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6293703694246970287, guid: 698912b029da67c4eb9ff4dbdca6cbef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293703694246970287, guid: 698912b029da67c4eb9ff4dbdca6cbef, type: 3}
       propertyPath: _PixelationFactor
       value: 0.3
       objectReference: {fileID: 0}
@@ -20119,6 +20680,41 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4340246787525626463, guid: fb5c1182dc63b04408405e1bca4a9f41, type: 3}
+--- !u!114 &4198073448811555112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697196330502541682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &4198073448811555113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2697196330502541682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b731f11b573c0614ababcd2683c12362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 4198073448811555112}
+  interactionMsessage: Take [E]
+  canBeInteractive: 1
+  canBeHold: 0
+  isFlashbang1: 0
 --- !u!114 &4251173559892847872
 MonoBehaviour:
   m_ObjectHideFlags: 0
