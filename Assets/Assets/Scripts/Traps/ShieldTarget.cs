@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class ShieldTarget : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    bool breaked;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        //Check if trap has already been activated and the incoming collision has matching tag
+        if (other.CompareTag("Interactable"))
+        {
+            Break();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Break()
     {
-        
+        if(breaked) return;
+        breaked = true;
+
+        ShieldManager.Instance.DecraseTarget();
+        gameObject.SetActive(false);
+
     }
 }

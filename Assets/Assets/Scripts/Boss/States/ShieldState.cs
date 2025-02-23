@@ -14,8 +14,8 @@ public class ShieldState : IEnemyState
 
     public void Enter()
     {
-        Debug.Log("Entering Shield State");
         agent.SetDestination(boss.ShieldPosition.position);
+        ShieldManager.Instance.ActivateShield();
     }
 
     public void Update()
@@ -29,6 +29,6 @@ public class ShieldState : IEnemyState
 
     public void Exit()
     {
-        Debug.Log("Exiting Shield State");
+        
     }
 }

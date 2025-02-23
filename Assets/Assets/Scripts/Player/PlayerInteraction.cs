@@ -35,8 +35,6 @@ public class PlayerInteraction : MonoBehaviour
             //Make sure the component exists before trying to use it.
             if (hit.collider.tag == "Interactable" && interactable != null && interactable.interactable)
             {
-                print("sdfsghjkkjg");
-
                 Interactable newInteractable = interactable;
                 if (currentInteractable != null && newInteractable != currentInteractable) currentInteractable.DisableOutline();
                 SetCurrentInteractable(newInteractable);

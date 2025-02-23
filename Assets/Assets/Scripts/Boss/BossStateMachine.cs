@@ -3,7 +3,7 @@ using UnityEngine.AI;
 using System.Collections.Generic;
 using System.Linq;
 
-public class BossStateMachine : MonoBehaviour
+public class BossStateMachine : Singleton<BossStateMachine>
 {
     public Transform Player; // The player to chase
     public Transform ShieldPosition; // Where the boss will go when shielding
@@ -50,6 +50,11 @@ public class BossStateMachine : MonoBehaviour
         CheckHealthAndShield();
     }
 
+    public void LeaveShield()
+    {
+        ChangeState(chaseState);
+    }
+
     public void ChangeState(IEnemyState newState)
     {
         if (currentState != null)
@@ -72,7 +77,7 @@ public class BossStateMachine : MonoBehaviour
         ShieldObject.SetActive(true);
         agent.isStopped = true; // Stop movement
         isShielded = true;
-        Debug.Log("Shield Activated!");
+        //Debug.Log("Shield Activated!");
     }
 
     private void DeactivateShield()
@@ -80,19 +85,16 @@ public class BossStateMachine : MonoBehaviour
         ShieldObject.SetActive(false);
         agent.isStopped = false; // Resume movement
         isShielded = false;
-        Debug.Log("Shield Deactivated!");
+        //Debug.Log("Shield Deactivated!");
     }
 
     private void CheckHealthAndShield()
     {
-        int count = 0;
-        if(count < 1)
-        {//Below 70HP, and below 30hp trigger shield state only if not already shielded
         if (!isShielded && (Health < shieldHealthThreshold1 || Health < shieldHealthThreshold2))
         {
             ChangeState(shieldState);
         }
-        }
+        
 
         //Check is Shield Active
         if (isShielded)
