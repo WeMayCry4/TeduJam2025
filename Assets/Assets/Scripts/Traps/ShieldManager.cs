@@ -8,6 +8,24 @@ public class ShieldManager : Singleton<ShieldManager>
     [SerializeField] GameObject shieldParent;
     [SerializeField] GameObject shieldLights;
     bool activated;
+    public bool shieldPhase;
+
+
+    void Update()
+    {
+        if(!shieldPhase) return;
+
+        float distance = Vector3.Distance(BossStateMachine.Instance.transform.position, transform.position);
+
+        print(distance);
+
+        if (distance <= 1f)
+        {
+            ActivateShield();
+            LastBoss.Instance.Activate(BossStateMachine.Instance.transform);
+            BossStateMachine.Instance.Disable();
+        }
+    }
 
 
     public void ActivateShield()
@@ -32,7 +50,7 @@ public class ShieldManager : Singleton<ShieldManager>
             shieldParent.SetActive(false);
             shieldLights.SetActive(false);
 
-            BossStateMachine.Instance.LeaveShield();
+            //BossStateMachine.Instance.LeaveShield();
         }
     }
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 public class BossStateMachine : Singleton<BossStateMachine>
 {
@@ -10,6 +11,9 @@ public class BossStateMachine : Singleton<BossStateMachine>
     public GameObject ShieldObject; // The shield that appears
     public float Health = 100f;
     public GameObject ShieldSpots; // Parent object of the Shield Spots
+
+    // Added: prefab for creating new shield spot objects
+    public GameObject shieldSpotPrefab; 
 
     private IEnemyState currentState;
     public NavMeshAgent agent;
@@ -30,9 +34,7 @@ public class BossStateMachine : Singleton<BossStateMachine>
         isStunned = true;
         stunTimer = duration;
         agent.isStopped = true;
-        
     }
-
 
     void Start()
     {
@@ -45,7 +47,7 @@ public class BossStateMachine : Singleton<BossStateMachine>
         // Start in Chase State
         ChangeState(chaseState);
 
-        // Populate the list of shield spots
+        // (Optional) Populate the list of shield spots from existing children under ShieldSpots
         foreach (Transform child in ShieldSpots.transform)
         {
             shieldSpotList.Add(child.gameObject);
@@ -54,7 +56,6 @@ public class BossStateMachine : Singleton<BossStateMachine>
 
     void Update()
     {
-
         if (isStunned)
         {
             stunTimer -= Time.deltaTime;
@@ -63,7 +64,6 @@ public class BossStateMachine : Singleton<BossStateMachine>
                 isStunned = false;
                 agent.isStopped = false;
             }
-
             return;
         }
         
@@ -77,7 +77,13 @@ public class BossStateMachine : Singleton<BossStateMachine>
 
     public void LeaveShield()
     {
+        isShielded = false;
         ChangeState(chaseState);
+    }
+
+    public void Disable()
+    {
+        gameObject.SetActive(false);
     }
 
     public void ChangeState(IEnemyState newState)
@@ -86,7 +92,6 @@ public class BossStateMachine : Singleton<BossStateMachine>
         {
             currentState.Exit();
         }
-
         currentState = newState;
         currentState.Enter();
     }
@@ -103,7 +108,26 @@ public class BossStateMachine : Singleton<BossStateMachine>
         ShieldObject.SetActive(true);
         agent.isStopped = true; // Stop movement
         isShielded = true;
-        //Debug.Log("Shield Activated!");
+        
+        // Instantiate 4 shield spot objects relative to ShieldPosition.
+        // Clear any existing shield spots so we start fresh.
+        shieldSpotList.Clear();
+        
+        // Define four offset positions (you can adjust these offsets)
+        Vector3[] offsets = new Vector3[] {
+            new Vector3(1f, 0f, 0f),
+            new Vector3(-1f, 0f, 0f),
+            new Vector3(0f, 0f, 1f),
+            new Vector3(0f, 0f, -1f)
+        };
+
+        // Instantiate each shield spot at the offset from the ShieldPosition
+        foreach (Vector3 offset in offsets)
+        {
+            Vector3 spawnPos = ShieldPosition.position + offset;
+            GameObject shieldSpot = Instantiate(shieldSpotPrefab, spawnPos, Quaternion.identity, ShieldSpots.transform);
+            shieldSpotList.Add(shieldSpot);
+        }
     }
 
     private void DeactivateShield()
@@ -111,33 +135,26 @@ public class BossStateMachine : Singleton<BossStateMachine>
         ShieldObject.SetActive(false);
         agent.isStopped = false; // Resume movement
         isShielded = false;
-        //Debug.Log("Shield Deactivated!");
     }
 
     private void CheckHealthAndShield()
     {
         if (!isShielded && (Health < shieldHealthThreshold1 || Health < shieldHealthThreshold2))
         {
+            isShielded = true;
             ChangeState(shieldState);
         }
         
-
-        //Check is Shield Active
-        if (isShielded)
+        // Check if the shield is active and if all shield spots are destroyed
+        bool allShieldsDown = shieldSpotList.All(spot => spot == null);
+        if (isShielded && allShieldsDown)
         {
-            //Check if all shield spots are destoryed, linq makes it easy
-            bool allShieldsDown = shieldSpotList.All(spot => spot == null);
-
-            //ShieldsDown, then change state to Chase, and deactivate Shield
-            if (allShieldsDown)
-            {
-                DeactivateShield();
-                ChangeState(chaseState);
-            }
+            DeactivateShield();
+            ChangeState(chaseState);
         }
     }
 
-    //Call this function when spot is destroyed
+    // Call this function when a shield spot is destroyed
     public void RemoveShieldSpot(GameObject spot)
     {
         shieldSpotList.Remove(spot);

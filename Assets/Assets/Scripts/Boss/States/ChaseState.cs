@@ -14,7 +14,7 @@ public class ChaseState : IEnemyState
 
     public void Enter()
     {
-        Debug.Log("Entering Chase State");
+        
     }
 
     public void Update()
@@ -24,6 +24,6 @@ public class ChaseState : IEnemyState
 
     public void Exit()
     {
-        Debug.Log("Exiting Chase State");
+        
     }
 }

@@ -15,16 +15,12 @@ public class ShieldState : IEnemyState
     public void Enter()
     {
         agent.SetDestination(boss.ShieldPosition.position);
-        ShieldManager.Instance.ActivateShield();
+        ShieldManager.Instance.shieldPhase = true;
     }
 
     public void Update()
     {
-        float distance = Vector3.Distance(boss.transform.position, boss.ShieldPosition.position);
-        if (distance < 1f) // Once boss reaches the shield zone
-        {
-            boss.ActivateShield();
-        }
+
     }
 
     public void Exit()
