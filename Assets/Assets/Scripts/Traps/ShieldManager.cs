@@ -35,7 +35,7 @@ public class ShieldManager : Singleton<ShieldManager>
 
         shieldParent.SetActive(true);
         shieldLights.SetActive(true);
-        targetCount = 4;
+        targetCount = 6;
         
     }
 

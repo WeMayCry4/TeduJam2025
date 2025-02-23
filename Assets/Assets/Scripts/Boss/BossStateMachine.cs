@@ -22,8 +22,8 @@ public class BossStateMachine : Singleton<BossStateMachine>
     public IEnemyState shieldState;
 
     private bool isShielded = false; // Track if the shield is active
-    private float shieldHealthThreshold1 = 70f;
-    private float shieldHealthThreshold2 = 30f;
+    private float shieldHealthThreshold1 = 20f;
+
     private List<GameObject> shieldSpotList = new List<GameObject>();
 
     private bool isStunned = false;
@@ -34,6 +34,7 @@ public class BossStateMachine : Singleton<BossStateMachine>
         isStunned = true;
         stunTimer = duration;
         agent.isStopped = true;
+        GetComponent<Animator>().SetTrigger("stun");
     }
 
     void Start()
@@ -139,7 +140,7 @@ public class BossStateMachine : Singleton<BossStateMachine>
 
     private void CheckHealthAndShield()
     {
-        if (!isShielded && (Health < shieldHealthThreshold1 || Health < shieldHealthThreshold2))
+        if (!isShielded && (Health <= shieldHealthThreshold1))
         {
             isShielded = true;
             ChangeState(shieldState);
