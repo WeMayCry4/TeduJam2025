@@ -3,6 +3,8 @@ using UnityEngine.AI;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class BossStateMachine : Singleton<BossStateMachine>
 {
@@ -22,12 +24,24 @@ public class BossStateMachine : Singleton<BossStateMachine>
     public IEnemyState shieldState;
 
     private bool isShielded = false; // Track if the shield is active
-    private float shieldHealthThreshold1 = 20f;
+    private float shieldHealthThreshold1 = 30f;
 
     private List<GameObject> shieldSpotList = new List<GameObject>();
 
     private bool isStunned = false;
     private float stunTimer = 0f;
+
+    [SerializeField] Image healthBar;
+    [SerializeField] AudioSource firstSfx, AhhSfx, shieldSfx;
+
+
+
+    public void PlaySfx()
+    {
+        //shieldSfx.Play();
+    }
+
+
 
     public void Stun(float duration)
     {
@@ -35,6 +49,7 @@ public class BossStateMachine : Singleton<BossStateMachine>
         stunTimer = duration;
         agent.isStopped = true;
         GetComponent<Animator>().SetTrigger("stun");
+        AhhSfx.Play();
     }
 
     void Start()
@@ -53,6 +68,9 @@ public class BossStateMachine : Singleton<BossStateMachine>
         {
             shieldSpotList.Add(child.gameObject);
         }
+
+        DOVirtual.DelayedCall(5f, ()=> firstSfx.Play());
+        DOVirtual.DelayedCall(5f, ()=> print("Sfx played"));
     }
 
     void Update()
@@ -102,6 +120,13 @@ public class BossStateMachine : Singleton<BossStateMachine>
         Health -= damage;
         Debug.Log("Boss Health: " + Health);
         Stun(2);
+
+        healthBar.DOFillAmount(Health / 100f, 0.2f);
+
+        if(Health <= 30)
+        {
+            shieldSfx.Play();
+        }
     }
 
     public void ActivateShield()

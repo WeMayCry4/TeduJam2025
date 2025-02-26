@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c4b6c7a7fd73140af5c9ce4ebd8f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 13
   collider: {fileID: 7417213002423310302}
   duration: 10
 --- !u!135 &7417213002423310302

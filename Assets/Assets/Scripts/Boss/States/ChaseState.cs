@@ -5,6 +5,7 @@ public class ChaseState : IEnemyState
 {
     private BossStateMachine boss;
     private NavMeshAgent agent;
+    bool sfx;
 
     public ChaseState(BossStateMachine boss, NavMeshAgent agent)
     {
@@ -20,6 +21,13 @@ public class ChaseState : IEnemyState
     public void Update()
     {
         agent.SetDestination(boss.Player.position);
+
+        if(!sfx)
+        {
+            sfx = true;
+            BossStateMachine.Instance.PlaySfx();
+        }
+
     }
 
     public void Exit()
